@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Конструктор пиццы</title>
+  <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+  <div id="app" class="wrapper">
+    <div class="container_left">
+      <img src="img/pizza.png" alt="">
+    </div>
+    <div class="container_right">
+      <table class="table">
+        <tr>
+          <td>Мясо</td>
+          <td class="box_btn">
+            <button :disabled="disabled" v-on:click="meat += 1">+</button>
+            <p>{{meat}}</p>
+            <button :disabled="disabled" v-on:click="meat -= 1">-</button>
+          </td>
+          <td>{{meat_mass}}гр</td>
+          <td>{{meat_price}}р</td>
+        </tr>
+        <tr>
+          <td>Овощи</td>
+          <td class="box_btn">
+            <button v-on:click="vegetables += 1">+</button>
+            <p>{{vegetables}}</p>
+            <button v-on:click="vegetables -= 1">-</button>
+          </td>
+          <td>{{vegetables_mass}}гр</td>
+          <td>{{vegetables_price}}р</td>
+        </tr>
+        <tr>
+          <td>Сыр</td>
+          <td class="box_btn">
+            <button v-on:click="cheese += 1">+</button>
+            <p>{{cheese}}</p>
+            <button v-on:click="cheese -= 1">-</button>
+          </td>
+          <td>{{cheese_mass}}гр</td>
+          <td>{{cheese_price}}р</td>
+        </tr>
+      </table>
+      <div class="box_price">
+        <h1 class="price">{{price = meat * meat_price + vegetables * vegetables_price + cheese * cheese_price}}р</h1>
+        <form class="" action="index.html" method="post">
+          <button type="button" name="button">Заказать</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
