@@ -3,19 +3,19 @@ var app = new Vue({
   data: {
       meat: [
         { meat_count: 0 },
-        { meat_mass: 150 },
+        { meat_mass: 250 },
         { meat_price: 100 },
         { meat_show: false }
       ],
       vegetables: [
         { vegetables_count: 0 },
-        { vegetables_mass: 150 },
+        { vegetables_mass: 100 },
         { vegetables_price: 50 },
         { vegetables_show: false }
       ],
       cheese: [
         { cheese_count: 0 },
-        { cheese_mass: 150 },
+        { cheese_mass: 200 },
         { cheese_price: 80 },
         {cheese_show: false}
       ],
