@@ -1,18 +1,74 @@
 var app = new Vue({
   el: '#app',
   data: {
-    meat: 0,
-    vegetables: 0,
-    cheese: 0,
-    meat_show: false,
-    vegetables_show: false,
-    cheese_show: false,
-    meat_price: 100,
-    vegetables_price: 50,
-    cheese_price: 80,
-    meat_mass: 150,
-    vegetables_mass: 150,
-    cheese_mass: 150,
-    price: 0,
+      meat: [
+        { meat_count: 0 },
+        { meat_mass: 150 },
+        { meat_price: 100 },
+        { meat_show: false }
+      ],
+      vegetables: [
+        { vegetables_count: 0 },
+        { vegetables_mass: 150 },
+        { vegetables_price: 50 },
+        { vegetables_show: false }
+      ],
+      cheese: [
+        { cheese_count: 0 },
+        { cheese_mass: 150 },
+        { cheese_price: 80 },
+        {cheese_show: false}
+      ],
+    price: 0
+  },
+
+  methods: {
+    add_meat: function() {
+      this.meat[0].meat_count++;
+      this.meat[3].meat_show = true;
+    },
+    delete_meat: function() {
+      if(!this.meat[0].meat_count<=0) {
+        this.meat[0].meat_count--;
+        if(this.meat[0].meat_count == 0){
+          this.meat[3].meat_show = false;
+        }
+      }
+    },
+    add_vegetables: function() {
+      this.vegetables[0].vegetables_count++;
+      this.vegetables[3].vegetables_show = true;
+    },
+    delete_vegetables: function(){
+      if(!this.vegetables[0].vegetables_count<=0) {
+        this.vegetables[0].vegetables_count--;
+        if(this.vegetables[0].vegetables_count == 0){
+          this.vegetables[3].vegetables_show = false;
+        }
+      }
+    },
+    add_cheese: function() {
+      this.cheese[0].cheese_count++;
+      this.cheese[3].cheese_show = true;
+    },
+    delete_cheese: function() {
+      if(!this.cheese[0].cheese_count<=0) {
+        this.cheese[0].cheese_count--;
+        if(this.cheese[0].cheese_count == 0){
+          this.cheese[3].cheese_show = false;
+        }
+      }
+    }
+  },
+
+  computed: {
+    total_cost: function() {
+      return this.price = this.meat[0].meat_count *
+             this.meat[2].meat_price +
+             this.vegetables[0].vegetables_count *
+             this.vegetables[2].vegetables_price +
+             this.cheese[0].cheese_count *
+             this.cheese[2].cheese_price;
+    }
   }
 })
