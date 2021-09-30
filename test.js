@@ -2,22 +2,22 @@ var app = new Vue({
   el: '#app',
   data: {
       meat: [
-        { meat_count: 0 },
+        { meat_count: 4 },
         { meat_mass: 250 },
         { meat_price: 100 },
-        { meat_show: false }
+        { meat_show: true }
       ],
       vegetables: [
-        { vegetables_count: 0 },
+        { vegetables_count: 2 },
         { vegetables_mass: 100 },
         { vegetables_price: 50 },
-        { vegetables_show: false }
+        { vegetables_show: true }
       ],
       cheese: [
-        { cheese_count: 0 },
+        { cheese_count: 3 },
         { cheese_mass: 200 },
         { cheese_price: 80 },
-        {cheese_show: false}
+        {cheese_show: true}
       ],
     price: 0
   },

@@ -24,8 +24,8 @@
             <p>{{meat[0].meat_count}}</p>
             <button  type="button" v-on:click="delete_meat">-</button>
           </td>
-          <td>{{meat[1].meat_mass}}гр</td>
-          <td>{{meat[2].meat_price}}р</td>
+          <td>{{meat[0].meat_count * meat[1].meat_mass}}гр</td>
+          <td>{{meat[0].meat_count * meat[2].meat_price}}р</td>
           <td><img src="img/meat.png" alt=""></td>
         </tr>
         <tr>
@@ -35,8 +35,8 @@
             <p>{{vegetables[0].vegetables_count}}</p>
             <button type="button" v-on:click="delete_vegetables">-</button>
           </td>
-          <td>{{vegetables[1].vegetables_mass}}гр</td>
-          <td>{{vegetables[2].vegetables_price}}р</td>
+          <td>{{vegetables[0].vegetables_count * vegetables[1].vegetables_mass}}гр</td>
+          <td>{{vegetables[0].vegetables_count * vegetables[2].vegetables_price}}р</td>
           <td><img src="img/vegetables.png" alt=""></td>
         </tr>
         <tr>
@@ -46,8 +46,8 @@
             <p>{{cheese[0].cheese_count}}</p>
             <button type="button" v-on:click="delete_cheese">-</button>
           </td>
-          <td>{{cheese[1].cheese_mass}}гр</td>
-          <td>{{cheese[2].cheese_price}}р</td>
+          <td>{{cheese[0].cheese_count * cheese[1].cheese_mass}}гр</td>
+          <td>{{cheese[0].cheese_count * cheese[2].cheese_price}}р</td>
           <td><img src="img/cheese.png" alt=""></td>
         </tr>
       </table>
