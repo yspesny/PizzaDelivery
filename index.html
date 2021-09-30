@@ -9,38 +9,46 @@
   <div id="app" class="wrapper">
     <div class="container_left">
       <img src="img/pizza.png" alt="">
+      <div class="box_ing">
+        <img v-show="meat_show"src="img/meat.png" alt="">
+        <img src="img/vegetables.png" alt="">
+        <img src="img/cheese.png" alt="">
+      </div>
     </div>
     <div class="container_right">
       <table class="table">
         <tr>
           <td>Мясо</td>
           <td class="box_btn">
-            <button :disabled="disabled" v-on:click="meat += 1">+</button>
+            <button type="button" v-on:click="meat++">+</button>
             <p>{{meat}}</p>
-            <button :disabled="disabled" v-on:click="meat -= 1">-</button>
+            <button  type="button" :disabled="meat<=0" v-on:click="meat--;">-</button>
           </td>
           <td>{{meat_mass}}гр</td>
           <td>{{meat_price}}р</td>
+          <td><img src="img/meat.png" alt=""></td>
         </tr>
         <tr>
           <td>Овощи</td>
           <td class="box_btn">
-            <button v-on:click="vegetables += 1">+</button>
+            <button type="button" v-on:click="vegetables++">+</button>
             <p>{{vegetables}}</p>
-            <button v-on:click="vegetables -= 1">-</button>
+            <button type="button" :disabled="vegetables<=0" v-on:click="vegetables--">-</button>
           </td>
           <td>{{vegetables_mass}}гр</td>
           <td>{{vegetables_price}}р</td>
+          <td><img src="img/vegetables.png" alt=""></td>
         </tr>
         <tr>
           <td>Сыр</td>
           <td class="box_btn">
-            <button v-on:click="cheese += 1">+</button>
+            <button type="button" v-on:click="cheese++">+</button>
             <p>{{cheese}}</p>
-            <button v-on:click="cheese -= 1">-</button>
+            <button type="button" :disabled="cheese<=0" v-on:click="cheese--">-</button>
           </td>
           <td>{{cheese_mass}}гр</td>
           <td>{{cheese_price}}р</td>
+          <td><img src="img/cheese.png" alt=""></td>
         </tr>
       </table>
       <div class="box_price">
